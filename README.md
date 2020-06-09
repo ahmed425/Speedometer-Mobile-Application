@@ -2,7 +2,7 @@
 
 A car speedometer mobile app with Flutter to measure the current speed of the vehicle and measure the time the vehicle takes to speed up from 10 to 30 KMH and the time the vehicle takes to slow down from 30 to 10 KMH.
 
-![Car Speedometer Demo](https://i.imgur.com/HW3rlfS.gifv)
+![Car Speedometer Demo](https://i.imgur.com/HW3rlfS.gif)
 
 
 ## Getting Started
