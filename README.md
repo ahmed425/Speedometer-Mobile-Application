@@ -1,7 +1,6 @@
 # car_speedometer
 
-A new Flutter project.
-
+A car speedometer mobile app with Flutter to measure the current speed of the vehicle and measure the time the vehicle takes to speed up from 10 to 30 KMH and the time the vehicle takes to slow down from 30 to 10 KMH.
 ## Getting Started
 
 This project is a starting point for a Flutter application.
