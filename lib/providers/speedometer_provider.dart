@@ -2,28 +2,60 @@ import 'package:flutter/material.dart';
 import 'package:geolocator/geolocator.dart';
 import '../models/speedometer_model.dart';
 import 'package:fluttertoast/fluttertoast.dart';
+import 'package:location/location.dart' hide LocationAccuracy;
 
 class SpeedometerProvider with ChangeNotifier {
   Speedometer _speedometer =
       new Speedometer(currentSpeed: 0, time10_30: 0, time30_10: 0);
 
   Speedometer get speedometer => _speedometer;
-  bool _locationServiceEnabled;
-  GeolocationStatus _geolocationStatus;
+  bool _isLocationServiceEnabled;
+  PermissionStatus _permissionGranted;
   Stopwatch _stopwatch = Stopwatch();
   final Geolocator _geolocator = Geolocator();
 
-  //Method to check location service status and geolocation permission status
+  //Method to check location service status and location permission status
   Future<void> checkLocationServiceAndPermissionStatus() async {
-    _geolocationStatus = await _geolocator.checkGeolocationPermissionStatus();
-    _locationServiceEnabled = await _geolocator.isLocationServiceEnabled();
+    Location location = new Location();
+
+    _isLocationServiceEnabled = await location.serviceEnabled();
+    if (!_isLocationServiceEnabled) {
+      _isLocationServiceEnabled = await location.requestService();
+      if (!_isLocationServiceEnabled) {
+        Fluttertoast.showToast(
+            msg:
+                "Car Speedometer require enabling the location service to be able to measure the vehicle speed",
+            toastLength: Toast.LENGTH_LONG,
+            gravity: ToastGravity.CENTER,
+            timeInSecForIosWeb: 1,
+            backgroundColor: Colors.red,
+            textColor: Colors.white,
+            fontSize: 16.0);
+      }
+    }
+
+    _permissionGranted = await location.hasPermission();
+    if (_permissionGranted == PermissionStatus.denied) {
+      _permissionGranted = await location.requestPermission();
+      if (_permissionGranted != PermissionStatus.granted) {
+        Fluttertoast.showToast(
+            msg:
+                "Car Speedometer require allowing the location service to be able to measure the vehicle speed",
+            toastLength: Toast.LENGTH_LONG,
+            gravity: ToastGravity.CENTER,
+            timeInSecForIosWeb: 1,
+            backgroundColor: Colors.red,
+            textColor: Colors.white,
+            fontSize: 16.0);
+      }
+    }
   }
 
   //Method to get the vehicle current speed
   Future<void> getSpeed() async {
     await checkLocationServiceAndPermissionStatus();
-    if (_locationServiceEnabled &&
-        _geolocationStatus == GeolocationStatus.granted) {
+    if (_isLocationServiceEnabled &&
+        _permissionGranted == PermissionStatus.granted) {
       LocationOptions options =
           LocationOptions(accuracy: LocationAccuracy.high, distanceFilter: 10);
       _geolocator.getPositionStream(options).listen((position) {
