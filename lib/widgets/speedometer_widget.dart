@@ -7,7 +7,7 @@ class SpeedometerWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final providerData = Provider.of<SpeedometerProvider>(context);
-    providerData.getSpeed();
+    providerData.getSpeedUpdates();
     return Scaffold(
       appBar: AppBar(
         title: Text(
