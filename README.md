@@ -33,3 +33,9 @@ Includes utils method showErrorToast which shows Toast to user if he disabled or
 - providerData : instance of the SpeedometerProvider class to listen to provider data changes.
 ![Widget_Tree](https://i.imgur.com/N9HCru0.png)
 
+## How to run
+- Clone this repo
+- Run flutter packages get
+- Run flutter run while connecting a physical mobile device or emulator
+## APK file 
+![Widget_Tree](https://drive.google.com/file/d/1wfQDMY7scNpvUNX1tDdG_f1c5vayQo6U/view?usp=sharing)
