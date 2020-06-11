@@ -23,7 +23,10 @@ flutter_launcher_icons: ^0.7.5	: For creating app icon.
                 time30_10 (int) : To represent the time in seconds the vehicle takes to slow down from 30 KM/H to 10 KM/H.
                 range (int) : to represent the speed range in which the vehicle moving. 
 ## Providers:SpeedometerProvider Class includes instance of SpeedometerModel and the following methods: 
-checkLocationAndPermissionStatus() to check the location service and permission status, getSpeedUpdates() to get the vehicle current speed updates while it is moving and updateSpeed(Position position) which updates the current speed according to the vehicle position ,checkSpeedAndMeasureTimeWhileInRange(double vehicleSpeed), checkSpeedAndMeasureTimeWhileOutOfRange(double vehicleSpeed) to measure time10_30 and time 30_10.
+checkLocationAndPermissionStatus() to check the location service and permission status.
+updateSpeed(Position position): which updates the vehicle current speed and call either checkSpeedAndMeasureTimeWhileInRange or checkSpeedAndMeasureTimeWhileOutOfRange according to the vehicle current speed.
+getSpeedUpdates() : which listens to the vehicle position and pass it to the updateSpeed(Position position) method . 
+checkSpeedAndMeasureTimeWhileInRange(double vehicleSpeed), checkSpeedAndMeasureTimeWhileOutOfRange(double vehicleSpeed): to measure time10_30 and time 30_10.
 ## Utils:
 Includes utils method showErrorToast which shows Toast to user if he disabled or denied the location service or permission.  
 ## Widgets: SpeedometerWidget Class (StatelessWidget) which listens to the SpeedometerProvider Class to be notified of changes and update the UI accordingly and it includes the following :
