@@ -9,11 +9,11 @@ The Provider pattern is used for data and state management .
 
 ## Flutter Packages/Plugins/Libraries Used
 
--segment_display: ^0.4.1+1 :	To Support multiple types of segment displays.
--geolocator: ^5.3.2+2	: To provide easy access to platform specific location services.
--location: ^3.0.2  : This plugin for Flutter handles getting location on Android and iOS.
--provider: ^4.1.3 :	For data and state management.
--flutter_launcher_icons: ^0.7.5	: For creating app icon.
+- segment_display: ^0.4.1+1 :	To Support multiple types of segment displays.
+- geolocator: ^5.3.2+2	: To provide easy access to platform specific location services.
+- location: ^3.0.2  : This plugin for Flutter handles getting location on Android and iOS.
+- provider: ^4.1.3 :	For data and state management.
+- flutter_launcher_icons: ^0.7.5	: For creating app icon.
 
 ## This app was made using the provider Approach/Pattern as follows:
 
