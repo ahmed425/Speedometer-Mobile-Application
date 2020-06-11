@@ -38,5 +38,5 @@ Includes utils method showErrorToast which shows Toast to user if he disabled or
 - Clone this repo
 - Run flutter packages get
 - Run flutter run while connecting a physical mobile device or emulator
-## APK file 
-- https://drive.google.com/file/d/1wfQDMY7scNpvUNX1tDdG_f1c5vayQo6U/view?usp=sharing
+## APK file download link
+- https://drive.google.com/file/d/1gMfwR89SaR6GJiZmlPBrlL69oEoDHhO7/view?usp=sharing
