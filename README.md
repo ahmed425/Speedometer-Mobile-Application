@@ -18,10 +18,10 @@ The Provider pattern is used for data and state management .
 ## This app was made using the provider Approach/Pattern as follows:
 
 ### Data Models: SpeedometerModel Class includes the following fields/variables:
--currrentSpeed (double): To represent the vehicle current speed.
--time10_30 (int) : To represent the time in seconds the vehicle takes to speed up from 10 KM/H to 30 KM/H.
--time30_10 (int) : To represent the time in seconds the vehicle takes to slow down from 30 KM/H to 10 KM/H.
--range (int) : to represent the speed range in which the vehicle moving. 
+- currrentSpeed (double): To represent the vehicle current speed.
+- time10_30 (int) : To represent the time in seconds the vehicle takes to speed up from 10 KM/H to 30 KM/H.
+- time30_10 (int) : To represent the time in seconds the vehicle takes to slow down from 30 KM/H to 10 KM/H.
+- range (int) : to represent the speed range in which the vehicle moving. 
 ### Providers:SpeedometerProvider Class includes instance of SpeedometerModel and the following methods: 
 - checkLocationAndPermissionStatus() to check the location service and permission status.
 - updateSpeed(Position position): which updates the vehicle current speed and call either checkSpeedAndMeasureTimeWhileInRange or checkSpeedAndMeasureTimeWhileOutOfRange according to the vehicle current speed.
