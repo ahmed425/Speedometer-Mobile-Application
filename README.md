@@ -18,10 +18,10 @@ flutter_launcher_icons: ^0.7.5	: For creating app icon.
 ## This app was made using the provider Approach/Pattern as follows:
 
 ## Data Models: SpeedometerModel Class includes the following fields/variables:
-                currrentSpeed (double): To represent the vehicle current speed
+                currrentSpeed (double): To represent the vehicle current speed.
                 time10_30 (int) : To represent the time in seconds the vehicle takes to speed up from 10 KM/H to 30 KM/H.
                 time30_10 (int) : To represent the time in seconds the vehicle takes to slow down from 30 KM/H to 10 KM/H.
-                type (int) : To represent the range of speed in which the vehicle is moving.
+                range (int) : to represent the speed range in which the vehicle moving. 
 ## Providers:SpeedometerProvider Class includes instance of SpeedometerModel and the following methods: 
 checkLocationAndPermissionStatus() to check the location service and permission status, getSpeedUpdates() to get the vehicle current speed updates while it is moving and updateSpeed(Position position) which updates the current speed according to the vehicle position ,checkSpeedAndMeasureTimeWhileInRange(double vehicleSpeed), checkSpeedAndMeasureTimeWhileOutOfRange(double vehicleSpeed) to measure time10_30 and time 30_10.
 ## Utils:
