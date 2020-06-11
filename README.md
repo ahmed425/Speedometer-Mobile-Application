@@ -3,7 +3,7 @@
 A car speedometer mobile app with Flutter to measure the current speed of the vehicle and measure the time the vehicle takes to speed up from 10 KMH to 30 KMH and the time the vehicle takes to slow down from 30 KMH to 10 KMH.
 
 ## Demo
-![Car Speedometer Demo](https://i.imgur.com/K0cV2M6.gif)
+![Car Speedometer Demo](https://i.imgur.com/K0cV2M6.gif) , ![Car Speedometer Demo](https://i.imgur.com/BVCWjUM.png) 
 
 ## Pattern/Approach Used 
 The Provider pattern is used for data and state management .
