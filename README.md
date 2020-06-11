@@ -16,7 +16,7 @@ The Provider pattern is used for data and state management .
 - location: ^3.0.2  : This plugin for Flutter handles getting location on Android and iOS.
 - provider: ^4.1.3 :	For data and state management.
 - flutter_launcher_icons: ^0.7.5	: For creating app icon.
-
+- fluttertoast: ^4.0.0: for displaying Toast to the user if he disabled the location service or denied the location permission.
 ## This app was made using the provider Approach/Pattern as follows:
 
 ### Data Models: SpeedometerModel Class includes the following fields/variables:
