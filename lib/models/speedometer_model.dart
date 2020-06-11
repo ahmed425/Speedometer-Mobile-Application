@@ -4,13 +4,13 @@ class Speedometer {
   double currentSpeed;
   int time10_30;
   int time30_10;
-  int type;
+  int range;
 
   Speedometer(
       {@required this.currentSpeed,
       @required this.time10_30,
       @required this.time30_10,
-      this.type = LESS_10});
+      this.range = LESS_10});
 }
 
 const FROM_10_TO_30 = 1;

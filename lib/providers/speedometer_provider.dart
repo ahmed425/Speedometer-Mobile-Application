@@ -71,13 +71,13 @@ class SpeedometerProvider with ChangeNotifier {
   void checkSpeedAndMeasureTimeWhileInRange(double vehicleSpeed) {
     if (vehicleSpeed >= SPEED_10) {
       //check if the vehicle speed was less than 10 KMH
-      if (speedometer.type == LESS_10) {
-        speedometer.type = FROM_10_TO_30;
+      if (speedometer.range == LESS_10) {
+        speedometer.range = FROM_10_TO_30;
         _stopwatch.start();
         speedometer.time10_30 = _stopwatch.elapsed.inSeconds;
       }
       //check if the vehicle speed was in the range from 10 to 30
-      else if (speedometer.type == FROM_10_TO_30) {
+      else if (speedometer.range == FROM_10_TO_30) {
         //update the time on the screen accordingly (time10_30)
         speedometer.time10_30 = _stopwatch.elapsed.inSeconds;
       }
@@ -85,12 +85,12 @@ class SpeedometerProvider with ChangeNotifier {
 
     if (vehicleSpeed <= SPEED_30) {
       //check if the vehicle speed was more than 30 KMH
-      if (speedometer.type == OVER_30) {
-        speedometer.type = FROM_30_TO_10;
+      if (speedometer.range == OVER_30) {
+        speedometer.range = FROM_30_TO_10;
         _stopwatch.start();
         speedometer.time30_10 = _stopwatch.elapsed.inSeconds;
         //check if the vehicle speed from 30 to 10
-      } else if (speedometer.type == FROM_30_TO_10) {
+      } else if (speedometer.range == FROM_30_TO_10) {
         speedometer.time30_10 = _stopwatch.elapsed.inSeconds;
       }
     }
@@ -100,16 +100,16 @@ class SpeedometerProvider with ChangeNotifier {
     //check if the vehicle speed is less than 10 KMH
     if (vehicleSpeed < SPEED_10) {
       //check if the vehicle speed was in the range from 30_10 KMH
-      if (speedometer.type == FROM_30_TO_10) {
-        speedometer.type = LESS_10;
+      if (speedometer.range == FROM_30_TO_10) {
+        speedometer.range = LESS_10;
         _stopwatch.stop();
         //update the time on the screen accordingly (time10_30)
         speedometer.time30_10 = _stopwatch.elapsed.inSeconds;
         _stopwatch.reset();
       }
       //check if the vehicle speed was in the range from 10 to 30
-      else if (speedometer.type == FROM_10_TO_30) {
-        speedometer.type = LESS_10;
+      else if (speedometer.range == FROM_10_TO_30) {
+        speedometer.range = LESS_10;
         //reset the stopwatch since the vehicle speed is Less than 10 KMH (Out Of ange)
         _stopwatch.reset();
         speedometer.time10_30 = _stopwatch.elapsed.inSeconds;
@@ -119,8 +119,8 @@ class SpeedometerProvider with ChangeNotifier {
     //check if the vehicle speed is more than 30 KMH
     if (vehicleSpeed > SPEED_30) {
       //check if the vehicle speed was in the range from 10_30 KMH
-      if (speedometer.type == FROM_10_TO_30) {
-        speedometer.type = OVER_30;
+      if (speedometer.range == FROM_10_TO_30) {
+        speedometer.range = OVER_30;
         _stopwatch.stop();
         //update the time on the screen accordingly (time10_30)
         speedometer.time10_30 = _stopwatch.elapsed.inSeconds;
@@ -128,8 +128,8 @@ class SpeedometerProvider with ChangeNotifier {
         _stopwatch.reset();
       }
       //check if the vehicle speed was in the range from 30_10 KMH
-      else if (speedometer.type == FROM_30_TO_10) {
-        speedometer.type = OVER_30;
+      else if (speedometer.range == FROM_30_TO_10) {
+        speedometer.range = OVER_30;
         //reset the stopwatch since the vehicle speed is more than 30 KMH (Out Of ange)
         _stopwatch.reset();
         speedometer.time30_10 = _stopwatch.elapsed.inSeconds;
