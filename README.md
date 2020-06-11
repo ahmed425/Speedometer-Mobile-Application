@@ -24,6 +24,8 @@ flutter_launcher_icons: ^0.7.5	: For creating app icon.
                 type (int) : To represent the range of speed in which the vehicle is moving.
 ## Providers:SpeedometerProvider Class includes instance of SpeedometerModel and the following methods: 
 checkLocationAndPermissionStatus() to check the location service and permission status, getSpeedUpdates() to get the vehicle current speed updates while it is moving and updateSpeed(Position position) which updates the current speed according to the vehicle position ,checkSpeedAndMeasureTimeWhileInRange(double vehicleSpeed), checkSpeedAndMeasureTimeWhileOutOfRange(double vehicleSpeed) to measure time10_30 and time 30_10.
+## Utils:
+Includes utils method showErrorToast which shows Toast to user if he disabled or denied the location service or permission.  
 ## Widgets: SpeedometerWidget Class (StatelessWidget) which listens to the SpeedometerProvider Class to be notified of changes and update the UI accordingly and it includes the following :
 -providerData : instance of the SpeedometerProvider class to listen to provider data changes.
 ![Widget_Tree](https://i.imgur.com/N9HCru0.png)
