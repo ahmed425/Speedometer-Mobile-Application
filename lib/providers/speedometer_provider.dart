@@ -40,7 +40,7 @@ class SpeedometerProvider with ChangeNotifier {
 
 //Method to update the current speed according to the vehicle position
   void updateSpeed(Position position) {
-    double speed = position.speed;
+    double speed = (position.speed) * 3.6;
     _speedometer.currentSpeed = speed;
 
     if (speed >= SPEED_10 || speed <= SPEED_30) {
